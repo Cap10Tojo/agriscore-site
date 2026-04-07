@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Partner With Us — AgriScore</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:56px}
+.tracks{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.track{border:1.5px solid var(--border);border-radius:12px;padding:22px 24px;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none;display:block}
+.track:hover,.track.active{border-color:var(--green);background:rgba(46,125,50,0.04)}
+.track-title{font-weight:600;color:var(--dark);margin-bottom:4px;font-size:15px}
+.track-sub{font-size:13px;color:var(--gray-mid)}
+.locations{margin-top:44px}
+.loc-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-light);margin-bottom:16px}
+.loc-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.loc-dot{width:10px;height:10px;border-radius:50%;background:var(--green-accent);margin-top:5px;flex-shrink:0}
+.loc-title{font-weight:600;color:var(--dark);font-size:14px}
+.loc-sub{font-size:13px;color:var(--gray-mid)}
+.contact-form{background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px}
+.form-row{margin-bottom:20px}
+label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+input,textarea,select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
+input:focus,textarea:focus,select:focus{border-color:var(--green)}
+textarea{resize:vertical;min-height:110px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{background:var(--green);color:#fff;border:none;width:100%;padding:14px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s;margin-top:8px}
+.submit-btn:hover{background:var(--green-mid)}
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page">
+  <div class="page-inner">
+
+    <p class="eyebrow reveal">Partner With Us</p>
+    <h2 class="section-h reveal">Let's Close the Credit Gap Together</h2>
+
+    <div class="contact-grid">
+      <div>
+        <p class="reveal" style="font-size:16px;color:var(--gray-mid);line-height:1.75">Whether you're a lender looking to expand into agricultural credit, or an investor who sees the opportunity in rural African fintech — we want to hear from you.</p>
+        <div class="tracks">
+          <div class="track active reveal">
+            <div class="track-title">🏦 I am a lender or MFI</div>
+            <div class="track-sub">Explore API integration, pricing, and a pilot partnership</div>
+          </div>
+          <div class="track reveal">
+            <div class="track-title">💼 I am an investor or partner</div>
+            <div class="track-sub">Learn about our roadmap, traction, and capital needs</div>
+          </div>
+        </div>
+        <div class="locations reveal">
+          <div class="loc-label">Locations</div>
+          <div class="loc-item">
+            <div class="loc-dot"></div>
+            <div><div class="loc-title">Washington D.C., USA</div><div class="loc-sub">Research & Strategy</div></div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-dot"></div>
+            <div><div class="loc-title">Harare, Zimbabwe</div><div class="loc-sub">Field operations & pilot partnerships</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="row2">
+          <div class="form-row"><label>Name</label><input type="text" placeholder="Your full name"/></div>
+          <div class="form-row"><label>Organisation</label><input type="text" placeholder="Institution or company"/></div>
+        </div>
+        <div class="form-row"><label>Email</label><input type="email" placeholder="you@institution.com"/></div>
+        <div class="form-row">
+          <label>I am a…</label>
+          <select>
+            <option value="">Select your role</option>
+            <option>Lender / MFI</option>
+            <option>Rural or Community Bank</option>
+            <option>Agri-Input Company</option>
+            <option>Crop Insurer</option>
+            <option>Investor</option>
+            <option>Development Partner / NGO</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row"><label>Message</label><textarea placeholder="Tell us about your interest…"></textarea></div>
+        <button class="submit-btn" id="send-btn">Send Message</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.track').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.track').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+  });
+});
+document.getElementById('send-btn').addEventListener('click',function(){
+  const inputs=document.querySelectorAll('input,textarea');
+  const filled=[...inputs].filter(i=>i.value.trim());
+  if(filled.length<2){this.textContent='Please fill in your details';setTimeout(()=>this.textContent='Send Message',2000);return;}
+  this.textContent='✓ Sent — we\'ll be in touch';
+  this.style.background='#1B5E20';
+});
+</script>
+</body>
+</html>

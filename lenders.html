@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Lenders — AgriScore</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.lenders-hero{display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:start;margin-bottom:80px}
+.sp-list{display:flex;flex-direction:column;gap:20px;margin-top:36px}
+.sp-item{display:flex;align-items:flex-start;gap:16px}
+.sp-check{width:26px;height:26px;border-radius:50%;background:rgba(46,125,50,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sp-check svg{width:13px;height:13px}
+.sp-text strong{display:block;font-size:15px;font-weight:600;color:var(--dark);margin-bottom:2px}
+.sp-text span{font-size:14px;color:var(--gray-mid)}
+.pricing-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px 36px;position:sticky;top:88px}
+.pricing-card h3{font-family:'Fraunces',serif;font-size:22px;color:var(--dark);margin-bottom:28px}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
+.price-row:last-of-type{border-bottom:none}
+.price-name{font-size:14px;color:var(--gray-mid)}
+.price-val{font-weight:600;color:var(--dark);font-size:14px}
+.pricing-note{font-size:13px;color:var(--gray-light);line-height:1.6;margin-top:20px}
+.pricing-cta{width:100%;background:var(--green);color:#fff;border:none;padding:14px;border-radius:8px;font-weight:600;font-size:15px;margin-top:20px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s}
+.pricing-cta:hover{background:var(--green-mid)}
+.customers{margin-top:24px;background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:20px 24px}
+.customers-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-light);margin-bottom:12px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:900px){
+  .lenders-hero{grid-template-columns:1fr}
+  .pricing-card{position:static}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page">
+  <div class="page-inner">
+
+    <div class="lenders-hero">
+      <div>
+        <p class="eyebrow reveal">For Lenders</p>
+        <h2 class="section-h reveal">Expand Your Agricultural Loan Portfolio — Without Expanding Your Risk</h2>
+        <p class="section-sub reveal">AgriScore plugs into your existing workflow and gives your loan officers a reliable, fast, and fair way to say yes to farmers they could never evaluate before.</p>
+
+        <div class="sp-list">
+          <div class="sp-item reveal">
+            <div class="sp-check"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5.5 10L11 3.5" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="sp-text"><strong>Simple integration</strong><span>Connect via API — no infrastructure overhaul, no disruption to your team</span></div>
+          </div>
+          <div class="sp-item reveal">
+            <div class="sp-check"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5.5 10L11 3.5" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="sp-text"><strong>Climate-adjusted scores</strong><span>Farmers aren't penalised for droughts or floods — your decisions are fairer and more accurate</span></div>
+          </div>
+          <div class="sp-item reveal">
+            <div class="sp-check"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5.5 10L11 3.5" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="sp-text"><strong>Clear rationale with every score</strong><span>Auditable decisions that satisfy regulatory requirements and build team confidence</span></div>
+          </div>
+          <div class="sp-item reveal">
+            <div class="sp-check"><svg viewBox="0 0 13 13" fill="none"><path d="M2 6.5L5.5 10L11 3.5" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="sp-text"><strong>Zero credit risk to AgriScore</strong><span>We score — you lend. We carry no lending risk of our own</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="pricing-card reveal">
+          <h3>Simple, Transparent Pricing</h3>
+          <div class="price-row"><span class="price-name">Per-Query API Fee</span><span class="price-val">$0.50 – $2.00 / score</span></div>
+          <div class="price-row"><span class="price-name">Monthly Subscription</span><span class="price-val">$300 – $800 / month</span></div>
+          <div class="price-row"><span class="price-name">Data Licensing</span><span class="price-val">Custom pricing</span></div>
+          <div class="pricing-note">All tiers include climate-adjusted scoring and a clear rationale with every decision.</div>
+          <button class="pricing-cta" onclick="window.location.href='contact.html'">Request API Access</button>
+        </div>
+        <div class="customers reveal" style="margin-top:16px">
+          <div class="customers-label">Who We Work With</div>
+          <div class="tag-row">
+            <span class="tag tag-green">Microfinance Institutions</span>
+            <span class="tag tag-green">Rural Banks</span>
+            <span class="tag tag-green">Agri-Input Companies</span>
+            <span class="tag tag-green">Crop Insurers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*0.07+'s';obs.observe(el)});
+</script>
+</body>
+</html>
