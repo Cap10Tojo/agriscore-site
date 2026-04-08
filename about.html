@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — AgriScore</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.team-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px 28px;text-align:center;transition:box-shadow .2s}
+.team-card:hover{box-shadow:0 6px 28px rgba(46,125,50,0.08)}
+.avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;object-fit:cover;object-position:center top;border:3px solid var(--border);display:block}
+.team-name{font-size:19px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.team-role{font-size:12px;font-weight:600;color:var(--green);letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px}
+.team-bio{font-size:13px;color:var(--gray-mid);line-height:1.65}
+.mission-banner{background:var(--green);border-radius:16px;padding:64px 48px;text-align:center;margin-top:56px}
+.mission-banner p{font-family:'Fraunces',serif;font-size:clamp(20px,2.5vw,30px);font-style:italic;color:#fff;line-height:1.45;max-width:760px;margin:0 auto}
+.story{max-width:700px;margin:56px auto 0;text-align:center}
+.story p{font-size:17px;color:var(--gray-mid);line-height:1.8;margin-bottom:20px}
+@media(max-width:768px){
+  .team-grid{grid-template-columns:1fr}
+  .mission-banner{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page">
+  <div class="page-inner">
+
+    <p class="eyebrow reveal" style="text-align:center">The Team</p>
+    <h2 class="section-h reveal" style="text-align:center;max-width:600px;margin:0 auto 0">Built by People Who Know the Problem</h2>
+
+    <div class="story">
+      <p class="reveal">AgriScore was founded by three graduates of George Washington University with academic and professional backgrounds spanning data science, software engineering, and agricultural development across Zimbabwe and Sub-Saharan Africa.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img src="antony.jpg" alt="Antony Magaya" class="avatar"/>
+        <div class="team-name">Antony Magaya</div>
+        <div class="team-role">Co-Founder & CEO</div>
+        <div class="team-bio">MSc Data Analytics, George Washington University. Leads product strategy and credit model architecture. Former Operations Analyst bridging finance and data.</div>
+      </div>
+      <div class="team-card reveal">
+        <img src="dylan.jpg" alt="Dylan Magureyi" class="avatar"/>
+        <div class="team-name">Dylan Magureyi</div>
+        <div class="team-role">Co-Founder & CTO</div>
+        <div class="team-bio">MSc Cybersecurity, George Washington University. Leads all engineering and platform architecture — the infrastructure that makes AgriScore work at scale.</div>
+      </div>
+      <div class="team-card reveal">
+        <img src="nyasha.jpg" alt="Nyasha Bwanya" class="avatar"/>
+        <div class="team-name">Nyasha Bwanya</div>
+        <div class="team-role">Co-Founder, Head of Agriculture</div>
+        <div class="team-bio">Graduate in Agricultural Studies. Leads cooperative partnerships and field operations. The domain expertise that keeps AgriScore grounded in the realities of rural Zimbabwe.</div>
+      </div>
+    </div>
+
+    <div class="mission-banner reveal">
+      <p>"Building the credit infrastructure that formal finance never built for rural Africa."</p>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="nav.js"></script>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';obs.observe(el)});
+</script>
+</body>
+</html>
