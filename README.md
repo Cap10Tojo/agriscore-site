@@ -3,7 +3,7 @@
 Marketing and information site for **AgriScore**, an AI-powered credit scoring
 platform for smallholder farmers in Zimbabwe.
 
-> "Giving Zimbabwe's farmers a financial identity — no collateral, no bank account required."
+> "Giving Zimbabwe's farmers a financial identity. No collateral, no bank account required."
 
 ## The problem
 
@@ -29,8 +29,7 @@ enabling lenders to extend credit to previously invisible borrowers.
 
 ## Stack
 
-Pure HTML, CSS, and vanilla JavaScript. No frameworks or build tools —
-intentionally lightweight for fast load times and easy hosting.
+Pure HTML, CSS, and vanilla JavaScript. 
 
 ## Status
 
